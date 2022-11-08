@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap");
+
+// [data-theme="dark"] {
+// }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  // font-family: "Roboto Condensed", sans-serif;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+body::-webkit-scrollbar {
+  width: 3px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #fafafa;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #007fff;
+  border-radius: 50px;
+}
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+a[href] {
+  color: var(--text-1-color);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
