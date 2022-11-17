@@ -29,7 +29,7 @@ const Popup = (props) => {
       </div>
       {opens &&
         ReactDOM.createPortal(
-          <div className="popup-children-wraper">
+          <div className="popup-children-wraper" onClick={() => handleClose()}>
             <div className="popup-children-inner">
               <div className="popup-children-header">
                 <h2>{title}</h2>

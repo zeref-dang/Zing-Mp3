@@ -12,7 +12,9 @@ const Button = ({
   sidebaritem = false,
   leftIcon,
   rightIcon,
-  style
+  style,
+  setTheme,
+  onclick,
 }) => {
   let Comp = "button";
   const props = [];
@@ -33,10 +35,13 @@ const Button = ({
     <Comp
       className={`${sidebarList ? "button-sidebar" : ""}${
         sidebaritem ? "button-sidebaritem" : ""
-      }${primary ? "button-primary" : ""} button-btn `}
+      }${primary ? "button-primary" : ""} ${
+        setTheme ? "button-settheme" : " "
+      } button-btn `}
       id={location.pathname == propsString ? "active" : ""}
       to={propsString}
       style={style}
+      onClick={onclick}
     >
       {leftIcon && (
         <div
