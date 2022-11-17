@@ -1,0 +1,47 @@
+.header-wraper {
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  > .inner {
+    width: 1178px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > .left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > .header-search {
+        width: 540px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        border-radius: 25px;
+        background-color: var(--alpha-bg);
+        > button {
+          margin-left: 5px;
+        }
+        > input {
+          width: 80%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.header-theme-body {
+  padding: 20px 30px;
+  > h3 {
+    margin-bottom: 10px;
+  }
+  > .item-theme {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    justify-content: space-between;
+  }
+}

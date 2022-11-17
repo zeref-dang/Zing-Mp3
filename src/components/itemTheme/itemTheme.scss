@@ -1,0 +1,19 @@
+.item-theme-wraper {
+  margin-bottom: 20px;
+  > .inner {
+    > .img {
+      width: 125px;
+      overflow: hidden;
+      &:hover img {
+        transform: scale(110%);
+        transition: transform 0.7s;
+      }
+      > img {
+        width: 100%;
+      }
+    }
+
+    > .title {
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.Layouts-wraper {
+  display: flex;
+  // background-image: url(../../assets/img/theme1.jpg);
+  background-size: 1920px auto;
+  background-repeat: repeat;
+  background-color: var(--layout-bg);
+  > .inner {
+    flex: 1;
+  }
+}

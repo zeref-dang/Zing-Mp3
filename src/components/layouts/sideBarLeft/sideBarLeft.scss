@@ -1,0 +1,28 @@
+.Sidebarleft-wraper {
+  width: var(--width--sidebar-left);
+  height: var(--height--sidebar-left);
+  background-color: var(--sidebar-bg);
+  > .inner {
+    > .Sidebarleft-logo {
+      width: 120px;
+      height: 70px;
+      display: flex;
+      margin-left: 28px;
+      align-items: center;
+      background: url(https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg)
+        50% / contain no-repeat;
+    }
+  }
+}
+
+@media only screen and (max-width: 1365px) {
+  .Sidebarleft-wraper {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .Sidebarleft-wraper {
+    display: none;
+  }
+}

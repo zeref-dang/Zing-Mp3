@@ -1,36 +1,54 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserJSPlugin = require("terser-webpack-plugin");
 module.exports = {
-  entry: "./src/index.js", // Dẫn tới file index.js ta đã tạo
+  entry: "./src/index.js",
   output: {
-    path: path.join(__dirname, "/build"), // Thư mục chứa file được build ra
-    filename: "bundle.js", // Tên file được build ra
+    filename: "[name].min.js",
+    path: path.resolve(__dirname, "resources/dist"),
   },
+  optimization: {
+    minimizer: [new CssMinimizerPlugin(), new TerserJSPlugin({})],
+    splitChunks: {
+      chunks: "all",
+    },
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "Output Management",
+      template: "./public/index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "style.min.css",
+    }),
+  ],
+  devtool: "eval-cheap-module-source-map",
   module: {
     rules: [
       {
-        test: /\.js$/, // Sẽ sử dụng babel-loader cho những file .js
-        exclude: /node_modules/, // Loại trừ thư mục node_modules
-        use: ["babel-loader"],
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
+        },
       },
       {
-        test: /\.css$/, // Sử dụng style-loader, css-loader cho file .css
-        use: ["style-loader", "css-loader"],
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
-        ],
+        test: /\.(sa|sc)ss$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
             loader: "file-loader",
@@ -39,10 +57,12 @@ module.exports = {
       },
     ],
   },
-  // Chứa các plugins sẽ cài đặt trong tương lai
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./public/index.html",
-    }),
-  ],
+  devServer: {
+    static: {
+      directory: "./",
+    },
+    historyApiFallback: true,
+    port: 3001,
+    open: true,
+  },
 };
