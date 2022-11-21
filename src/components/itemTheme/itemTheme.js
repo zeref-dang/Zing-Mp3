@@ -29,11 +29,13 @@ const ItemTheme = (props) => {
                     }
                     setThemeUI(`theme${index + 1}`);
                     setBackgroundThemeUI(
-                      `/resources/assets/img/theme${index + 1}.${name}`
+                      `resources/assets/img/imgtheme/theme${index + 1}.${name}`
                     );
                     let theme = {
                       themeColor: `theme${index + 1}`,
-                      theme: `/resources/assets/img/theme${index + 1}.${name}`,
+                      theme: `resources/assets/img/imgtheme/theme${
+                        index + 1
+                      }.${name}`,
                     };
                     localStorage.setItem("theme", JSON.stringify(theme));
                   }}

@@ -40,7 +40,11 @@ const Artists = () => {
 
   return (
     <div className="artists-wraper">
-      {loading && <Loading />}
+      {loading && (
+        <div className="loading">
+          <Loading />
+        </div>
+      )}
       {!loading && info && (
         <>
           <div className="inner">
@@ -83,7 +87,7 @@ const Artists = () => {
               </div>
               <div className="awards">
                 <div className="img-awards">
-                  <img src="/resources/assets/image/awards.svg" />
+                  <img src="/resources/assets/img/imgartists/awards.svg" />
                 </div>
 
                 <div className="sub-awards">
@@ -97,11 +101,6 @@ const Artists = () => {
               <div className="right">
                 <img src={info.thumbnail} />
               </div>
-            </div>
-          </div>
-          <div className="cover">
-            <div>
-              <img src={info.cover} alt={info.name} />
             </div>
           </div>
         </>
