@@ -1,0 +1,20 @@
+.searchresultdefault-wraper {
+  margin: 10px 20px;
+  > .inner {
+    > .result {
+      padding: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+      a {
+        display: block;
+        width: 100%;
+      }
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+}

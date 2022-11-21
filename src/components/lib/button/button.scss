@@ -8,11 +8,22 @@
 }
 
 .button-primary {
-  height: 34px;
+  width: 160px;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--purple-primary);
+  border-radius: 20px;
+  margin-right: 20px;
 }
 
 .button-title {
   font-weight: 400;
+  line-height: 37px;
+  transform: translateY(1px);
+  padding-left: 5px;
+  color: var(--text-white);
 }
 
 // Sidebar
@@ -60,6 +71,12 @@
 // .button-icon-left {
 //   fill: var(--primary-text);
 // }
+
+.button-icon-left {
+  display: flex;
+  align-items: center;
+  fill: var(--text-white);
+}
 
 .button-settheme {
   width: 80px;

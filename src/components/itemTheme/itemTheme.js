@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import "./itemTheme.scss";
-import Button from "../button/button";
-import { useSetRecoilState, useRecoilValue } from "recoil";
+import Button from "../lib/button";
+import { useSetRecoilState } from "recoil";
 import { Theme } from "../../appState/theme";
 import { BackgroundTheme } from "../../appState/backgroundTheme";
 
@@ -31,6 +31,11 @@ const ItemTheme = (props) => {
                     setBackgroundThemeUI(
                       `/resources/assets/img/theme${index + 1}.${name}`
                     );
+                    let theme = {
+                      themeColor: `theme${index + 1}`,
+                      theme: `/resources/assets/img/theme${index + 1}.${name}`,
+                    };
+                    localStorage.setItem("theme", JSON.stringify(theme));
                   }}
                 >
                   Áp dụng

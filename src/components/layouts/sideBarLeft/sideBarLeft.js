@@ -1,5 +1,6 @@
 import React from "react";
-import Button from "../../button/button";
+import { Link } from "react-router-dom";
+import Button from "../../lib/button";
 import "./sideBarLeft.scss";
 
 const ICONCIRCLEPLAY = (

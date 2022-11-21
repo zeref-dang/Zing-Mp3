@@ -1,0 +1,127 @@
+.artists-wraper {
+  width: 100%;
+  height: 100%;
+
+  > .inner {
+    margin: 0 50px;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    > .infor {
+      width: 58.33%;
+      padding: 0 15px;
+      > .name {
+        font-size: 3rem;
+        color: var(--text-white);
+      }
+      > .describe {
+        color: var(--text-white);
+      }
+      > .btn-more {
+        color: var(--purple-primary);
+      }
+      > .btn {
+        display: flex;
+        padding: 10px 0;
+        .btn-color {
+          font-weight: 700;
+        }
+      }
+      > .awards {
+        display: inline-flex;
+        padding: 20px 0;
+        color: var(--text-white);
+        &:hover {
+          > .sub-awards {
+            display: block;
+          }
+        }
+        > .img-awards {
+          width: 48px;
+          height: 48px;
+          overflow: hidden;
+
+          > img {
+            width: 100%;
+          }
+        }
+        > .sub-awards {
+          display: none;
+          height: 48px;
+          font-size: 14px;
+          line-height: 17px;
+          margin-left: 10px;
+        }
+      }
+    }
+    > .avatar {
+      padding: 0 15px;
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      > .right {
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        overflow: hidden;
+        > img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  > .cover {
+    margin: 0 50px;
+    display: flex;
+    justify-content: center;
+    > div {
+      width: 1024px;
+      > img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.descrip-ar {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  > .header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    > .img {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 110px;
+      height: 110px;
+      margin-bottom: 10px;
+      > img {
+        width: 100%;
+      }
+    }
+    > .title {
+      margin-bottom: 20px;
+    }
+    > .main {
+      > div {
+        height: 210px;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+          width: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background-color: #fafafa;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: var(--purple-primary);
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}

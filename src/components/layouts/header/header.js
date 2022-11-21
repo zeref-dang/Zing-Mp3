@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Button from "../../button/button";
+import Button from "../../lib/button";
 import "./header.scss";
-import CircleButton from "../../circleButton/circleButton";
-import Popup from "../../popup/popup";
+import CircleButton from "../../lib/circleButton/circleButton";
+import Popup from "../../lib/popup";
 import ItemTheme from "../../itemTheme/itemTheme";
 import ThemeDemo from "../../../config";
+import SearchInput from "../../searchInput";
 
 const ARROWLEFT = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="17px">
@@ -36,15 +37,17 @@ const Header = () => {
     <div className="header-wraper">
       <div className="inner">
         <div className="left">
-          <Button leftIcon={ARROWLEFT} />
-          <Button leftIcon={ARROWRIGHT} />
-          <div className="header-search">
-            <Button leftIcon={SEARCH} />
-            <input
-              type="text"
-              placeholder="Tìm kiếm bài hát, nghệ sĩ, lời bài hát..."
+          <div className="button">
+            <Button leftIcon={ARROWLEFT} />
+            <Button leftIcon={ARROWRIGHT} />
+          </div>
+          <div className="logo-mobile">
+            <img
+              src="https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.64/static/media/icon_zing_mp3_60.f6b51045.svg"
+              alt="logo-mobile"
             />
           </div>
+          <SearchInput iconLeft={SEARCH} />
         </div>
         <div className="right">
           <Popup

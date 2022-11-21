@@ -1,6 +1,5 @@
 import React, { Children, useState } from "react";
 import PropTypes from "prop-types";
-import Button from "../button/button";
 import ReactDOM from "react-dom";
 
 import "./popup.scss";
@@ -12,7 +11,7 @@ const CLOSE = (
 );
 
 const Popup = (props) => {
-  const { title, children, renderMain } = props;
+  const { title, children, renderMain, small } = props;
 
   const [opens, setOpens] = useState(false);
   const handleClose = () => {
@@ -30,8 +29,14 @@ const Popup = (props) => {
       {opens &&
         ReactDOM.createPortal(
           <div className="popup-children-wraper" onClick={() => handleClose()}>
-            <div className="popup-children-inner">
-              <div className="popup-children-header">
+            <div
+              className={`${small ? "popup-small" : ""} popup-children-inner`}
+            >
+              <div
+                className={`${
+                  small ? "popup-title" : ""
+                } popup-children-header`}
+              >
                 <h2>{title}</h2>
                 <div onClick={() => handleClose()}>{CLOSE}</div>
               </div>
