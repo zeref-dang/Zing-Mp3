@@ -1,41 +1,39 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import "./artists.scss";
 import { useParams } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import PropTypes from "prop-types";
+import { InfoArtists } from "../../appState/infoArtists";
+import { ApiTool } from "../../tools/apiTool";
 import Popup from "../../components/lib/popup";
 import Button from "../../components/lib/button";
-import { ApiTool } from "../../tools/apiTool";
 import Loading from "../../components/loading";
-
-const PLAY = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="16px">
-    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
-  </svg>
-);
+import ArtistsMenu from "../../components/artistsMenu/artistsMenu";
+import "./artists.scss";
 
 const Artists = () => {
   const { id } = useParams();
-  const [info, setInfo] = useState();
+  const [info, setInfo] = useRecoilState(InfoArtists);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
-    const params = {
-      name: id,
-    };
-    const api = ApiTool.queryGetFromJson(
-      "https://api-zingmp3-public.herokuapp.com/api/artist",
-      params,
-      (key) => {
-        const data = key.data;
-        setInfo(data);
-        setLoading(false);
-        console.log(data);
-      }
-    );
-    return () => {
-      api.abort();
-    };
+    if ((info && id !== info.alias) || !info) {
+      setLoading(true);
+      const params = {
+        name: id,
+      };
+      const api = ApiTool.queryGetFromJson(
+        "https://api-zingmp3-public.herokuapp.com/api/artist",
+        params,
+        (key) => {
+          const data = key.data || [];
+          setInfo(data);
+          setLoading(false);
+        }
+      );
+      return () => {
+        api.abort();
+      };
+    }
   }, [id]);
 
   return (
@@ -56,7 +54,7 @@ const Artists = () => {
                   <div className="descrip-ar">
                     <div className="header">
                       <div className="img">
-                        <img src={info.thumbnail} />
+                        <img src={info.thumbnailM} />
                       </div>
                       <div className="title">
                         <h2>{info.name}</h2>
@@ -76,10 +74,14 @@ const Artists = () => {
                 </Popup>
               </div>
               <div className="btn">
-                <Button primary leftIcon={PLAY}>
+                <Button
+                  White
+                  primary
+                  leftIcon={<i className="icon ic-play sizw-16px"></i>}
+                >
                   <div className="btn-color">PHÁT NHẠC</div>
                 </Button>
-                <Button primary>
+                <Button White primary>
                   <div className="btn-color">
                     QUAN TÂM • {Math.floor(info.totalFollow / 1000) + "k"}
                   </div>
@@ -99,18 +101,15 @@ const Artists = () => {
             </div>
             <div className="avatar">
               <div className="right">
-                <img src={info.thumbnail} />
+                <img src={info.thumbnailM} />
               </div>
             </div>
           </div>
+          <ArtistsMenu />
         </>
       )}
     </div>
   );
-};
-
-Artists.propTypes = {
-  //
 };
 
 export default Artists;

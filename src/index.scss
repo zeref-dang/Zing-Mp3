@@ -17,6 +17,8 @@
   --primary-text: #dadada;
   --text-white: #fff;
   --text-black: #000;
+  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
+  --song-item-action: hsla(0, 0%, 100%, 0.5);
 }
 [data-theme="theme2"] {
   --alpha-bg: hsla(0, 0%, 100%, 0.05);
@@ -25,6 +27,13 @@
   --primary-text: #a0a0a0;
   --text-white: #fff;
   --text-black: #000;
+  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
+  --song-item-action: hsla(0, 0%, 100%, 0.5);
+  --player-bg: #181818;
+  --primary-bg: #363636;
+  --text-placeholder: #757575;
+  --progressbar-active-bg: #fff;
+  --progressbar-player-bg: hsla(0, 0%, 100%, 0.3);
 }
 [data-theme="theme3"] {
   --alpha-bg: rgba(0, 0, 0, 0.05);
@@ -33,6 +42,8 @@
   --primary-text: #32323d;
   --text-white: #000;
   --text-black: #fff;
+  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
+  --song-item-action: rgba(50, 50, 61, 0.5);
 }
 [data-theme="theme4"] {
   --alpha-bg: rgba(0, 0, 0, 0.05);
@@ -41,6 +52,8 @@
   --primary-text: #32323d;
   --text-white: #000;
   --text-black: #fff;
+  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
+  --song-item-action: rgba(50, 50, 61, 0.5);
 }
 
 [data-theme="theme5"] {
@@ -50,6 +63,8 @@
   --primary-text: #32323d;
   --text-white: #000;
   --text-black: #fff;
+  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
+  --song-item-action: rgba(50, 50, 61, 0.5);
 }
 
 [data-theme="theme6"] {
@@ -59,6 +74,8 @@
   --primary-text: #32323d;
   --text-white: #000;
   --text-black: #fff;
+  --tab-active-bg: #fff;
+  --song-item-action: rgba(50, 50, 61, 0.5);
 }
 
 [data-theme="theme7"] {
@@ -68,6 +85,8 @@
   --primary-text: #dadada;
   --text-white: #fff;
   --text-black: #000;
+  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
+  --song-item-action: hsla(0, 0%, 100%, 0.5);
 }
 
 [data-theme="theme8"] {
@@ -77,6 +96,8 @@
   --primary-text: #dadada;
   --text-white: #fff;
   --text-black: #000;
+  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
+  --song-item-action: hsla(0, 0%, 100%, 0.5);
 }
 
 * {

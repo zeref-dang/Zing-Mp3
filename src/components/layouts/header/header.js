@@ -1,34 +1,152 @@
 import React from "react";
-import PropTypes from "prop-types";
-
+import ThemeDemo from "../../../config";
 import Button from "../../lib/button";
-import "./header.scss";
 import CircleButton from "../../lib/circleButton/circleButton";
 import Popup from "../../lib/popup";
 import ItemTheme from "../../itemTheme/itemTheme";
-import ThemeDemo from "../../../config";
 import SearchInput from "../../searchInput";
-
-const ARROWLEFT = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="17px">
-    <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
-  </svg>
-);
-const ARROWRIGHT = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="17px">
-    <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-  </svg>
-);
-
-const SEARCH = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px">
-    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z" />
-  </svg>
-);
+import "./header.scss";
 
 const SHIRT = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="20px">
-    <path d="M211.8 0c7.8 0 14.3 5.7 16.7 13.2C240.8 51.9 277.1 80 320 80s79.2-28.1 91.5-66.8C413.9 5.7 420.4 0 428.2 0h12.6c22.5 0 44.2 7.9 61.5 22.3L628.5 127.4c6.6 5.5 10.7 13.5 11.4 22.1s-2.1 17.1-7.8 23.6l-56 64c-11.4 13.1-31.2 14.6-44.6 3.5L480 197.7V448c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64V197.7l-51.5 42.9c-13.3 11.1-33.1 9.6-44.6-3.5l-56-64c-5.7-6.5-8.5-15-7.8-23.6s4.8-16.6 11.4-22.1L137.7 22.3C155 7.9 176.7 0 199.2 0h12.6z" />
+  <svg width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+      <linearGradient
+        id="j32lhg93hd"
+        x1="62.206%"
+        x2="18.689%"
+        y1="70.45%"
+        y2="39.245%"
+      >
+        <stop offset="0%" stopColor="#F81212"></stop>
+        <stop offset="100%" stopColor="red"></stop>
+      </linearGradient>
+      <linearGradient
+        id="hjoavsus6g"
+        x1="50%"
+        x2="11.419%"
+        y1="23.598%"
+        y2="71.417%"
+      >
+        <stop offset="0%" stopColor="#00F"></stop>
+        <stop offset="100%" stopColor="#0031FF"></stop>
+      </linearGradient>
+      <linearGradient
+        id="la1y5u3dvi"
+        x1="65.655%"
+        x2="25.873%"
+        y1="18.825%"
+        y2="56.944%"
+      >
+        <stop offset="0%" stopColor="#FFA600"></stop>
+        <stop offset="100%" stopColor="orange"></stop>
+      </linearGradient>
+      <linearGradient
+        id="2dsmrlvdik"
+        x1="24.964%"
+        x2="63.407%"
+        y1="8.849%"
+        y2="55.625%"
+      >
+        <stop offset="0%" stopColor="#13EFEC"></stop>
+        <stop offset="100%" stopColor="#00E8DF"></stop>
+      </linearGradient>
+      <filter
+        id="4a7imk8mze"
+        width="230%"
+        height="230%"
+        x="-65%"
+        y="-65%"
+        filterUnits="objectBoundingBox"
+      >
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+      </filter>
+      <filter
+        id="301mo6jeah"
+        width="312.7%"
+        height="312.7%"
+        x="-106.4%"
+        y="-106.4%"
+        filterUnits="objectBoundingBox"
+      >
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+      </filter>
+      <filter
+        id="b2zvzgq7fj"
+        width="295%"
+        height="295%"
+        x="-97.5%"
+        y="-97.5%"
+        filterUnits="objectBoundingBox"
+      >
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+      </filter>
+      <filter
+        id="a1wq161tvl"
+        width="256%"
+        height="256%"
+        x="-78%"
+        y="-78%"
+        filterUnits="objectBoundingBox"
+      >
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.9"></feGaussianBlur>
+      </filter>
+      <path
+        id="qtpqrj1oda"
+        d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z"
+      ></path>
+      <path id="jggzvnjgfc" d="M0 0H20V20H0z"></path>
+      <path
+        id="2eiwxjmc7m"
+        d="M3.333 14.167V5.833l-1.666.834L0 3.333 3.333 0h3.334c.04 1.57.548 2.4 1.524 2.492l.142.008C9.403 2.478 9.958 1.645 10 0h3.333l3.334 3.333L15 6.667l-1.667-.834v8.334h-10z"
+      ></path>
+    </defs>
+    <g fill="none" fillRule="evenodd" transform="translate(2 3)">
+      <mask id="tinejqaasb" fill="#fff">
+        <use xlinkHref="#qtpqrj1oda"></use>
+      </mask>
+      <use fill="#FFF" fillOpacity="0" xlinkHref="#qtpqrj1oda"></use>
+      <g mask="url(#tinejqaasb)">
+        <g transform="translate(-2 -3)">
+          <mask id="uf3ckvfvpf" fill="#fff">
+            <use xlinkHref="#jggzvnjgfc"></use>
+          </mask>
+          <use fill="#D8D8D8" xlinkHref="#jggzvnjgfc"></use>
+          <circle
+            cx="8.9"
+            cy="6.8"
+            r="9"
+            fill="url(#j32lhg93hd)"
+            filter="url(#4a7imk8mze)"
+            mask="url(#uf3ckvfvpf)"
+          ></circle>
+          <circle
+            cx="9.3"
+            cy="13.7"
+            r="5.5"
+            fill="url(#hjoavsus6g)"
+            filter="url(#301mo6jeah)"
+            mask="url(#uf3ckvfvpf)"
+          ></circle>
+          <circle
+            cx="15.9"
+            cy="6.9"
+            r="6"
+            fill="url(#la1y5u3dvi)"
+            filter="url(#b2zvzgq7fj)"
+            mask="url(#uf3ckvfvpf)"
+          ></circle>
+          <circle
+            cx="16.4"
+            cy="17.7"
+            r="7.5"
+            fill="url(#2dsmrlvdik)"
+            filter="url(#a1wq161tvl)"
+            mask="url(#uf3ckvfvpf)"
+          ></circle>
+        </g>
+      </g>
+      <use fill="#FFF" fillOpacity="0.05" xlinkHref="#2eiwxjmc7m"></use>
+    </g>
   </svg>
 );
 
@@ -38,8 +156,8 @@ const Header = () => {
       <div className="inner">
         <div className="left">
           <div className="button">
-            <Button leftIcon={ARROWLEFT} />
-            <Button leftIcon={ARROWRIGHT} />
+            <Button leftIcon={<i className="icon ic-back size-24px"></i>} />
+            <Button leftIcon={<i className="icon ic-forward size-24px"></i>} />
           </div>
           <div className="logo-mobile">
             <img
@@ -47,7 +165,7 @@ const Header = () => {
               alt="logo-mobile"
             />
           </div>
-          <SearchInput iconLeft={SEARCH} />
+          <SearchInput />
         </div>
         <div className="right">
           <Popup
@@ -65,10 +183,6 @@ const Header = () => {
       </div>
     </div>
   );
-};
-
-Header.propTypes = {
-  //
 };
 
 export default Header;

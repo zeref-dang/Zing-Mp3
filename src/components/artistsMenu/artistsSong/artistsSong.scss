@@ -1,0 +1,68 @@
+.artistsSongWraper {
+  > .inner {
+    > .title {
+      display: flex;
+      align-items: center;
+      color: var(--text-white);
+      > h2 {
+        margin-right: 10px;
+      }
+    }
+    > .song {
+      width: 100%;
+      > .SongItem {
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        border-radius: 5px;
+        border-bottom: 1px solid var(--tab-active-bg);
+        margin: 5px 0;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--tab-active-bg);
+        }
+        > .left {
+          width: 50%;
+          display: inline-flex;
+          align-items: center;
+          > .Thumbnail {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            > img {
+              width: 100%;
+            }
+          }
+          > .cardInfo {
+            color: var(--text-white);
+            > .singer {
+              color: var(--song-item-action);
+              font-weight: 300;
+              font-size: 0.8rem;
+            }
+            > .nameSong {
+              height: 24px;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+        > .content {
+          color: var(--song-item-action);
+          font-weight: 300;
+          font-size: 0.8rem;
+        }
+        > .right {
+          color: var(--song-item-action);
+          font-weight: 300;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

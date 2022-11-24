@@ -1,14 +1,18 @@
 .item-theme-wraper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   margin-bottom: 20px;
   > .inner {
     > .img {
-      display: flex;
-      justify-content: center;
       position: relative;
       width: 125px;
-      overflow: hidden;
+      display: flex;
+      justify-content: center;
       margin-bottom: 10px;
       border-radius: 10px;
+      overflow: hidden;
       &:hover img {
         transform: scale(110%);
         transition: transform 0.7s;
@@ -20,12 +24,12 @@
         width: 100%;
       }
       > .before {
-        display: none;
-        width: 100%;
-        height: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
+        width: 100%;
+        height: 100%;
+        display: none;
         transform: translate(-50%, -50%);
         background-color: rgba(0, 0, 0, 0.3);
         > .before-inner {
@@ -37,6 +41,7 @@
 
     > .title {
       font-size: 0.813rem;
+      color: var(--text-white);
     }
   }
 }

@@ -1,6 +1,6 @@
 @keyframes dot-flasing {
   0% {
-    background-color: #9880ff;
+    background-color: var(--purple-primary);
   }
 
   50%,
@@ -20,7 +20,7 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background-color: #9880ff;
+  background-color: var(--purple-primary);
   animation: dot-flasing 0.8s infinite alternate;
 }
 

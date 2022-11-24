@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
+import "./flex.css";
+import "./icon.scss";
 import App from "./App";
 import { RecoilRoot } from "recoil";
 

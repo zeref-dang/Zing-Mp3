@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import SideBarLeft from "./sideBarLeft";
-import Header from "./header";
-import "./layouts.scss";
-import { Theme } from "../../appState/theme";
 import { BackgroundTheme } from "../../appState/backgroundTheme";
 import { KeySearch } from "../../appState/keySearch";
+import { Theme } from "../../appState/theme";
+import SideBarLeft from "./sideBarLeft";
+import Header from "./header";
 import SearchApi from "../searchApi";
+import PlayerControl from "./playerControl/playerControl";
+import "./layouts.scss";
 
 const themeLocal = JSON.parse(localStorage.getItem("theme"));
 
@@ -25,10 +26,6 @@ const Layouts = (props) => {
   }, []);
 
   return (
-    // ở đây sẽ có component searchApi (gọi Api mà không render ra gì cả) thông qua recoil keySearch
-    // component này sẽ gọi Api sau đó sẽ trả ra 2 kết quả search
-    //1 cái dành cho searchInput
-    //1 cái cho page search
     <div
       className="Layouts-wraper"
       style={{
@@ -38,6 +35,7 @@ const Layouts = (props) => {
     >
       {keySearch && <SearchApi />}
       <SideBarLeft />
+      <PlayerControl />
       <div className="inner">
         <Header />
         <div className="main">{children}</div>

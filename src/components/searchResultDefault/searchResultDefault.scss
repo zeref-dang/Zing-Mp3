@@ -1,19 +1,26 @@
 .searchresultdefault-wraper {
   margin: 10px 20px;
   > .inner {
+    > h4 {
+      color: var(--text-white);
+    }
     > .result {
       padding: 5px;
+      display: flex;
       cursor: pointer;
+      color: var(--text-white);
       &:hover {
         background-color: rgba(0, 0, 0, 0.1);
         border-radius: 5px;
       }
       a {
-        display: block;
         width: 100%;
+        color: var(--text-white);
+        display: flex;
       }
       span {
         margin-right: 10px;
+        color: var(--text-placeholder);
       }
     }
   }

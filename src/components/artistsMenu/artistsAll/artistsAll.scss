@@ -1,0 +1,10 @@
+.artistsAllWraper {
+  width: 100%;
+  > .inner {
+    > .sections {
+      > .single {
+        margin-top: 20px;
+      }
+    }
+  }
+}

@@ -13,15 +13,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--purple-primary);
   border-radius: 20px;
   margin-right: 20px;
+  background-color: var(--purple-primary);
 }
 
 .button-title {
   font-weight: 400;
-  line-height: 37px;
-  transform: translateY(1px);
   padding-left: 5px;
   color: var(--text-white);
 }
@@ -30,9 +28,9 @@
 .button-sidebar {
   width: 100%;
   height: 40px;
-  border: none;
   display: flex;
   align-items: center;
+  border: none;
   border-left: 5px solid transparent;
   fill: var(--primary-text);
   &:hover {
@@ -52,48 +50,55 @@
 .button-sidebar-icon-left {
   min-width: 50px;
   padding: 0 15px;
-  transform: translatey(10%);
 }
 
 .button-sidebaritem {
   width: 100%;
-  border: none;
   display: flex;
   align-items: center;
+  border: none;
 }
 
 .button-sidebaritem-title {
+  width: 100%;
   font-size: 0.8125rem;
   padding-left: 50px;
   text-align: left;
-  width: 100%;
 }
-// .button-icon-left {
-//   fill: var(--primary-text);
-// }
 
 .button-icon-left {
   display: flex;
   align-items: center;
-  fill: var(--text-white);
+  color: var(--text-white);
+}
+
+.button-white {
+  color: #fff;
+  fill: #fff;
+}
+
+.button-small {
+  width: 130px !important;
+  height: 30px !important;
 }
 
 .button-settheme {
-  width: 80px;
-  padding: 0 10px;
-  border-radius: 20px;
-  background-color: #1e88e5;
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 80%;
+  height: 30%;
+  padding: 0 10px;
+  border-radius: 20px;
+  background-color: var(--purple-primary);
   transform: translate(-50%, -50%);
 }
 
 #active {
-  background-color: var(--alpha-bg);
   border-left: 3px solid var(--purple-primary);
   fill: var(--text-item-hover);
   color: var(--text-item-hover);
+  background-color: var(--alpha-bg);
 }
 
 @media only screen and (max-width: 1365px) {

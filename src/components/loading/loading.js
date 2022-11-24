@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./loading.scss";
 
 const Loading = () => {
@@ -13,10 +12,6 @@ const Loading = () => {
       </div>
     </div>
   );
-};
-
-Loading.propTypes = {
-  //
 };
 
 export default Loading;

@@ -1,0 +1,12 @@
+.notiNoSomethingWraper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--tab-active-bg);
+  > .inner {
+    padding: 20px;
+    text-align: center;
+    color: var(--text-white);
+  }
+}

@@ -1,0 +1,122 @@
+.artistsAllSongIWraper {
+  > h2 {
+    color: var(--text-white);
+    margin-bottom: 10px;
+  }
+  > .inner {
+    display: flex;
+    > .thumbnail {
+      > .thumbnailList {
+        position: relative;
+        width: 270px;
+        height: 240px;
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        > .thumbnailItem {
+          width: 162px;
+          height: 162px;
+          position: absolute;
+          cursor: pointer;
+          border-radius: 4px;
+          transition: all 0.9s;
+          overflow: hidden;
+          > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        > .first {
+          width: 230px;
+          height: 230px;
+          z-index: 3;
+          left: 40px;
+          opacity: 1;
+        }
+        > .second {
+          width: 196px;
+          height: 196px;
+          z-index: 2;
+          left: 20px;
+          opacity: 0.7;
+        }
+        > .third {
+          z-index: 1;
+          left: 0;
+          opacity: 0.3;
+        }
+        > .fourth {
+          z-index: 1;
+          left: 0;
+          opacity: 0.3;
+        }
+      }
+    }
+    > .song {
+      width: 100%;
+      max-height: 221px;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--purple-primary);
+        border-radius: 50px;
+      }
+      > .SongItem {
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        border-radius: 5px;
+        border-bottom: 1px solid var(--tab-active-bg);
+        border-top: 1px solid transparent;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--tab-active-bg);
+        }
+        > .left {
+          width: 50%;
+          display: inline-flex;
+          align-items: center;
+          > .Thumbnail {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            > img {
+              width: 100%;
+            }
+          }
+          > .cardInfo {
+            color: var(--text-white);
+            > .singer {
+              color: var(--song-item-action);
+              font-weight: 300;
+              font-size: 0.8rem;
+            }
+            > .nameSong {
+              height: 24px;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+        > .content {
+          color: var(--song-item-action);
+          font-weight: 300;
+          font-size: 0.8rem;
+        }
+        > .right {
+          color: var(--song-item-action);
+          font-weight: 300;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

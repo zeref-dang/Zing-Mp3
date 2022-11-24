@@ -1,10 +1,10 @@
 .circleButton-wraper {
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
   fill: var(--primary-text);
   background-color: var(--alpha-bg);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
 }

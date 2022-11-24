@@ -1,0 +1,39 @@
+//li: 120 x 26
+.navbarMenu {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  > .navLink {
+    display: flex;
+    background-color: var(--alpha-bg);
+    padding: 5px;
+    border-radius: 20px;
+    > .navItem {
+      min-width: 120px;
+      min-height: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //   padding: 0 25px;
+      border-radius: 20px;
+      > a {
+        color: var(--text-white);
+        font-weight: 300;
+        width: 100%;
+        text-align: center;
+      }
+    }
+    > .active {
+      background-color: var(--tab-active-bg);
+      &:hover {
+        > a {
+          color: var(--purple-primary);
+        }
+      }
+    }
+  }
+}
+.mainInfo {
+  margin: 0 100px;
+  padding: 40px 0;
+}

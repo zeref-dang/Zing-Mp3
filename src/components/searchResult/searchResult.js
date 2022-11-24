@@ -1,24 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useSetRecoilState, useRecoilValue } from "recoil";
+import { useNavigate } from "react-router-dom";
 import { SearchInputs } from "../../appState/searchInputs";
-import "./searchResult.scss";
-import { Link, useNavigate } from "react-router-dom";
 import { IsOpenResult } from "../../appState/isOpenResult";
 import Loading from "../loading";
-import { StringTool } from "../../tools/stringTool";
-
-const PLAY = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-    <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
-  </svg>
-);
+import "./searchResult.scss";
 
 const SearchResult = (props) => {
   const { handleSelected } = props;
 
   const searchInputs = useRecoilValue(SearchInputs);
-  const [isOpenResult, setIsOpenResult] = useRecoilState(IsOpenResult);
+  const setIsOpenResult = useSetRecoilState(IsOpenResult);
   const navigate = useNavigate();
 
   const handleCloseResult = (item) => {
@@ -53,7 +45,7 @@ const SearchResult = (props) => {
                       <div className="singer-right">
                         <div className="singer-name">{item.name}</div>
                         <div className="singer-desc">
-                          nghệ sĩ - {Math.floor(item.totalFollow / 1000) + "k"}
+                          nghệ sĩ - {Math.floor(item.totalFollow / 1000) + "k "}
                           quan tâm
                         </div>
                       </div>
@@ -68,9 +60,13 @@ const SearchResult = (props) => {
                       // onClick={() => handleCloseResult()}
                     >
                       <div className="music-avatar">
-                        <img src={item.thumbnail} />
+                        <img src={item.thumbnailM} />
                         <div className="music-before">
-                          <div>{PLAY}</div>
+                          <div>
+                            {
+                              <i className="icon ic-play size-16px icon-white"></i>
+                            }
+                          </div>
                         </div>
                       </div>
                       <div className="music-left">
@@ -87,9 +83,4 @@ const SearchResult = (props) => {
     </div>
   );
 };
-
-SearchResult.propTypes = {
-  //
-};
-
 export default SearchResult;
