@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import SliderHome from "../../components/sliderHome";
+import NewReleaseHome from "../../components/newReleaseHome";
 import Loading from "../../components/loading";
 import { ApiTool } from "../../tools/apiTool";
 import { HomeState } from "../../appState/homeState";
@@ -40,6 +41,7 @@ const Home = () => {
     return (
       <div className="home-wraper">
         <SliderHome />
+        <NewReleaseHome />
       </div>
     );
   }

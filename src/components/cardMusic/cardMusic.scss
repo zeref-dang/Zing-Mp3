@@ -1,0 +1,106 @@
+.cardMusic {
+  width: 100%;
+  > .inner {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    cursor: pointer;
+    border-bottom: 1px solid var(--text-placeholder);
+    &:hover {
+      > .left {
+        > .img {
+          > .dark {
+            display: flex;
+          }
+        }
+      }
+    }
+    > .left {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      > .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        color: var(--text-white);
+      }
+      > .img {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        > img {
+          width: 100%;
+        }
+        > .dark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.3);
+          color: #fff;
+        }
+      }
+      > .img-60x60 {
+        width: 60px;
+        height: 60px;
+      }
+      > .title {
+        > .name {
+          color: var(--text-white);
+          font-size: 0.938rem;
+          height: 24px;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        > .describe {
+          color: var(--text-placeholder);
+          font-size: 0.813rem;
+        }
+        > .timeNewRelease {
+          color: var(--text-placeholder);
+          font-size: 0.813rem;
+        }
+      }
+      > .vip {
+        transform: translateY(-13px);
+      }
+    }
+    > .left-100 {
+      width: 100%;
+    }
+    > .center {
+      width: 40%;
+      font-size: 0.813rem;
+
+      display: flex;
+      align-items: center;
+      color: var(--text-placeholder);
+    }
+    > .center-0 {
+      width: 0;
+    }
+    > .right {
+      width: 10%;
+      font-size: 0.813rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: var(--text-placeholder);
+    }
+    > .right-0 {
+      width: 0;
+    }
+  }
+}

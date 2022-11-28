@@ -1,6 +1,6 @@
 .listSong {
   flex: 1;
-  height: calc(100vh - 90px - 50px);
+  height: calc(100vh);
   overflow-y: auto;
   &::-webkit-scrollbar {
     width: 0px;

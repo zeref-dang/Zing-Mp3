@@ -17,8 +17,8 @@ const ItemTheme = (props) => {
       <div className="row">
         {listItem.map((item, index) => {
           return (
-            <div className="col l-3 m-4 c-6">
-              <div key={index} className="item-theme-wraper">
+            <div className="col l-3 m-4 c-6" key={index}>
+              <div className="item-theme-wraper">
                 <div className="inner">
                   <div className="img">
                     <img src={item.src} alt={item.title} />

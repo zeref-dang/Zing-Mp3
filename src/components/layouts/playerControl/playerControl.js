@@ -57,7 +57,11 @@ const PlayerControl = () => {
     setInfoSong(controlPlayer.info);
     setSourse(controlPlayer.linkSong);
     setVolume(controlPlayer.volume);
+    setPlaySong({ ...playSong, repeat: controlPlayer.repeat });
   }, []);
+
+  console.log(controlPlayer.repeat);
+  console.log(playSong);
 
   useEffect(() => {
     audioE1.current.pause();
@@ -76,6 +80,7 @@ const PlayerControl = () => {
           (audioE1.current.currentTime / audioE1.current.duration) * 100
         )
       );
+
       // if (
       //   Math.floor(
       //     (audioE1.current.currentTime / audioE1.current.duration) * 100
@@ -95,12 +100,12 @@ const PlayerControl = () => {
         audioE1.current.play();
       }
     };
-
+    console.log(playSong);
     audioE1.current.addEventListener("ended", handleEnd);
     return () => {
       audioE1.current.removeEventListener("ended", handleEnd);
     };
-  }, []);
+  }, [playSong.repeat]);
 
   const handlePause = () => {
     if (playSong.isPlay) {
@@ -115,8 +120,12 @@ const PlayerControl = () => {
   const handleRepeat = () => {
     if (playSong.repeat) {
       setPlaySong({ ...playSong, repeat: false });
+      controlPlayer.repeat = false;
+      localStorage.setItem("ControlPlayer", JSON.stringify(controlPlayer));
     } else {
       setPlaySong({ ...playSong, repeat: true });
+      controlPlayer.repeat = true;
+      localStorage.setItem("ControlPlayer", JSON.stringify(controlPlayer));
     }
   };
 
