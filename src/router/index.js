@@ -9,6 +9,7 @@ import ArtistsSong from "../components/artistsMenu/artistsSong";
 import ArtistsSingle from "../components/artistsMenu/artistsSingle";
 import ArtistsAlbum from "../components/artistsMenu/artistsAlbum";
 import ArtistsMv from "../components/artistsMenu/artistsMv";
+import Album from "../pages/album/album";
 const publicRouter = [
   { id: 1, path: "/", component: Home },
   { id: 2, path: "/personal", component: Personal },
@@ -27,6 +28,7 @@ const publicRouter = [
       { id: 6.5, path: "/artists/:id/mv", component: ArtistsMv },
     ],
   },
+  { id: 7, path: "/album/:id", component: Album },
 ];
 const privateRouter = [];
 

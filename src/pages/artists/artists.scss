@@ -1,9 +1,7 @@
 .artists-wraper {
   width: 100%;
-  height: calc(100vh - 90px - 70px);
-  overflow: auto;
   &::-webkit-scrollbar {
-    width: 3px;
+    width: 0px;
   }
   &::-webkit-scrollbar-thumb {
     background-color: var(--purple-primary);
@@ -18,8 +16,6 @@
   > .inner {
     display: flex;
     justify-content: center;
-    margin: 0 50px;
-    padding: 40px 0;
     > .infor {
       width: 58.33%;
       padding: 0 15px;
@@ -119,12 +115,9 @@
     > .main {
       > div {
         height: 210px;
-        overflow: scroll;
+        overflow-y: scroll;
         &::-webkit-scrollbar {
           width: 3px;
-        }
-        &::-webkit-scrollbar-track {
-          background-color: #fafafa;
         }
         &::-webkit-scrollbar-thumb {
           background-color: var(--purple-primary);

@@ -1,10 +1,16 @@
 import React from "react";
+import { useRecoilValue } from "recoil";
+import { Screen } from "../../../appState/screen";
 import Button from "../../lib/button";
 import "./sideBarLeft.scss";
 
 const SideBarLeft = () => {
+  const screen = useRecoilValue(Screen);
   return (
-    <div className="Sidebarleft-wraper">
+    <div
+      className="Sidebarleft-wraper"
+      style={screen ? { height: "calc(100vh - 90px)" } : { height: "100vh" }}
+    >
       <div className="inner">
         <div className="Sidebarleft-logo"></div>
         <div className="Sidebarleft-listitem">

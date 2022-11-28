@@ -1,0 +1,96 @@
+.listSong {
+  flex: 1;
+  height: calc(100vh - 90px - 50px);
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+  > .Header {
+    display: flex;
+    > .item {
+      color: var(--text-white);
+    }
+    > .item:last-child {
+      text-align: right;
+    }
+  }
+  > .song {
+    > .item {
+      display: flex;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--text-placeholder);
+      cursor: pointer;
+      &:hover {
+        > .thumb {
+          > .img {
+            > .dark {
+              display: flex;
+            }
+          }
+        }
+      }
+      > .thumb {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        color: var(--text-white);
+        > .icon {
+          margin-right: 10px;
+          color: var(--text-placeholder);
+        }
+        > .img {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          margin-right: 10px;
+          > img {
+            width: 100%;
+          }
+          > .dark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+        }
+        > .title {
+          > .nameSong {
+            color: var(--text-white);
+            height: 24px;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          > .decSong {
+            color: var(--text-placeholder);
+          }
+        }
+        > .vip {
+          transform: translate(10px, -10px);
+        }
+      }
+      > .albumSong {
+        width: 40%;
+        color: var(--text-placeholder);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      > .timeSong {
+        width: 10%;
+        color: var(--text-placeholder);
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

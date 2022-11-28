@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./zingchart.scss";
 
 const Zingchart = () => {
-  return <div>Zingchart</div>;
+  return <div className="zingChart"></div>;
 };
 
 Zingchart.propTypes = {

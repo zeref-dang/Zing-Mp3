@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import PropTypes from "prop-types";
 import { InfoArtists } from "../../appState/infoArtists";
 import { ApiTool } from "../../tools/apiTool";
@@ -35,6 +35,9 @@ const Artists = () => {
       };
     }
   }, [id]);
+
+  //height: calc(100vh - 70px);
+  console.log(screen);
 
   return (
     <div className="artists-wraper">

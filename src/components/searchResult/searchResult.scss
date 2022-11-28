@@ -83,5 +83,8 @@
         color: var(--text-placeholder);
       }
     }
+    > .vip {
+      transform: translate(6px, -10px);
+    }
   }
 }

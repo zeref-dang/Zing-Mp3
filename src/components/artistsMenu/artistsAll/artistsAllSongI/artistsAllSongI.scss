@@ -82,6 +82,12 @@
           width: 50%;
           display: inline-flex;
           align-items: center;
+          > .icon {
+            margin: 0 10px;
+          }
+          > .vip {
+            transform: translate(6px, -10px);
+          }
           > .Thumbnail {
             width: 40px;
             height: 40px;

@@ -1,4 +1,9 @@
 .home-wraper {
+}
+.homeLoading {
   width: 100%;
-  height: calc(100vh - 90px - 70px);
+  height: calc(100vh - 70px - 90px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,7 +1,5 @@
-//li: 120 x 26
 .navbarMenu {
   display: flex;
-  // align-items: center;
   justify-content: center;
   > .navLink {
     display: flex;
@@ -14,7 +12,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      //   padding: 0 25px;
       border-radius: 20px;
       > a {
         color: var(--text-white);
@@ -33,7 +30,7 @@
     }
   }
 }
-.mainInfo {
-  margin: 0 100px;
-  padding: 40px 0;
-}
+// .mainInfo {
+//   margin: 0 100px;
+//   padding: 40px 0;
+// }

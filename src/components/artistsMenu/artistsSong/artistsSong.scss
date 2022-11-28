@@ -28,6 +28,9 @@
           width: 50%;
           display: inline-flex;
           align-items: center;
+          > .vip {
+            transform: translate(6px, -10px);
+          }
           > .Thumbnail {
             width: 40px;
             height: 40px;

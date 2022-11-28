@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { urlArtists } from "../../config/urlArtists";
 import "./layoutAlbum.scss";
 
 const LayoutAlbum = (props) => {
   const { title, column = [], mv = false } = props;
   const { id } = useParams();
+  const navigate = useNavigate();
 
   return (
     <div className="layoutAlbumWraper">
@@ -33,7 +34,13 @@ const LayoutAlbum = (props) => {
             {column &&
               column.map((item) => {
                 return (
-                  <div key={item.encodeId} className="columnLayoutAlbum">
+                  <div
+                    key={item.encodeId}
+                    className="columnLayoutAlbum"
+                    onClick={() => {
+                      navigate(`/album/${item.encodeId}`);
+                    }}
+                  >
                     <Link>
                       <div className="card">
                         <div className={`img ${mv ? "mv-img" : ""}`}>

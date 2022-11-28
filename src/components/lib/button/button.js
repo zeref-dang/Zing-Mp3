@@ -49,7 +49,8 @@ const Button = ({
         <div
           className={`${sidebarList ? "button-sidebar-icon-left" : ""} ${
             White ? "button-white" : ""
-          } button-icon-left`}
+          }
+          }button-icon-left`}
         >
           {leftIcon}
         </div>

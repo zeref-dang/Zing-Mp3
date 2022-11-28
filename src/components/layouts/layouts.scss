@@ -1,9 +1,18 @@
 .Layouts-wraper {
   display: flex;
+  height: 100vh;
   background-size: 1920px auto;
   background-repeat: repeat;
   background-color: var(--layout-bg);
   > .inner {
     flex: 1;
+    > .main {
+      height: calc(100vh - 90px - 70px);
+      margin: 0 50px;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 0px;
+      }
+    }
   }
 }
